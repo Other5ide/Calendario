@@ -8,6 +8,18 @@ public class TodaysDate {
     private int month;
     protected int year;
 
+    //constructor para uso normal
+    public TodaysDate () {
+        //no es necesario pasar nada
+    }
+
+    //constructor para testing
+    private Calendar testCalendar; //atributo para guardar calendario de testeo
+
+    public TodaysDate(Calendar calendarForTesting) {
+        this.testCalendar = calendarForTesting;
+    }
+
     //methods
     public void printDateAndTime(){
         GregorianCalendar calendar = new GregorianCalendar();
@@ -20,5 +32,22 @@ public class TodaysDate {
 
         System.out.println("Time: " + time);
         System.out.println("Date: " + month + " " + day + " " + year);
+    }
+
+    //métodos para acceder a los atributos privados desde el test
+    public String getTime() {
+        return time;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
     }
 }
